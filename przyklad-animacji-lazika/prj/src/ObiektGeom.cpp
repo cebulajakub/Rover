@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "ObiektGeom.hh"
+#include "Wektor.hh"
 
 
 
@@ -21,12 +22,7 @@ ObiektGeom::ObiektGeom( const char*  sNazwaPliku_BrylaWzorcowa,
 
 
 
-bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki(
-				      double  SkalaX, double SkalaY, double SkalaZ,
-				      double  PolozenieX,
-				      double  PolozenieY,
-				      double  PolozenieZ
-				    )
+bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki(Wektor<double> skala, Wektor<double> polozenie)
 {
   ifstream  StrmWe(_NazwaPliku_BrylaWzorcowa);
   ofstream  StrmWy(_NazwaPliku_BrylaRysowana);
@@ -47,9 +43,9 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki(
   if (StrmWe.fail())return false;
   
   do {
-    WspX = WspX*SkalaX+PolozenieX;
-    WspY = WspY*SkalaY+PolozenieY;    
-    WspZ = WspZ*SkalaZ+PolozenieZ;
+    WspX = WspX*skala[0]+polozenie[0];
+    WspY = WspY*skala[1]+polozenie[1];    
+    WspZ = WspZ*skala[2]+polozenie[2];
     StrmWy << WspX << " " << WspY << " " << WspZ << endl;
     ++Indeks_Wiersza;
     

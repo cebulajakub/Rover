@@ -4,6 +4,7 @@
 #include "PowierzchniaMarsa.hh"
 #include "ObiektGeom.hh"
 #include "Kolory.hh"
+#include "Wektor.hh"
 
 
 using namespace std;
@@ -51,16 +52,22 @@ int main()
 
   ObiektGeom  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski);
   ObiektGeom  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony);
-  ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony);  
+  ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony);
+    
 
   DodajDoListyRysowania(Lacze,Ob1);
   DodajDoListyRysowania(Lacze,Ob2);
   DodajDoListyRysowania(Lacze,Ob3);
-
   
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(20,20,10,0,0,0);
-  Ob2.Przelicz_i_Zapisz_Wierzcholki(20,20,10,60,60,0);
-  Ob3.Przelicz_i_Zapisz_Wierzcholki(20,20,10,-20,70,0);  
+Wektor<double> sk;
+Wektor<double> pol;
+  
+  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  Ob2.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  Ob3.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  
+       
+
   
   cout << endl << "Start programu gnuplot" << endl << endl;
   Lacze.Rysuj();
@@ -68,13 +75,13 @@ int main()
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(20,20,10,20,0,0);
+  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
   Lacze.Rysuj();
 
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(20,20,10,40,0,0);
+  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
   Lacze.Rysuj();
   
   cout << "Nacisnij klawisz ENTER, aby zakonczyc." << endl;

@@ -1,5 +1,6 @@
 #ifndef OBIEKTGEOM_HH
 #define OBIEKTGEOM_HH
+#include "Wektor.hh"
 
 #include <string>
 
@@ -23,12 +24,7 @@ class ObiektGeom {
     const std::string & WezNazwePliku_BrylaRysowana() const
                  { return _NazwaPliku_BrylaRysowana; }
 
-    bool Przelicz_i_Zapisz_Wierzcholki(
-				      double  SkalaX, double SkalaY, double SkalaZ,
-				      double  PolozenieX,
-				      double  PolozenieY,
-				      double  PolozenieZ
-				    );
+    bool Przelicz_i_Zapisz_Wierzcholki(Wektor<double> skala, Wektor<double> polozenie);
 				     
 };
 
