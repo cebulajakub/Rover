@@ -9,7 +9,8 @@ using namespace std;
 
 ObiektGeom::ObiektGeom( const char*  sNazwaPliku_BrylaWzorcowa,
 		        const char*  sNazwaObiektu,
-		        int          KolorID
+		        int          KolorID,
+            double s1,double s2,double s3, double p1, double p2, double p3
 		       ):
   _NazwaPliku_BrylaWzorcowa(sNazwaPliku_BrylaWzorcowa), _KolorID(KolorID)
 {
@@ -18,11 +19,19 @@ ObiektGeom::ObiektGeom( const char*  sNazwaPliku_BrylaWzorcowa,
   _NazwaPliku_BrylaRysowana += "/";
   _NazwaPliku_BrylaRysowana += sNazwaObiektu;
   _NazwaPliku_BrylaRysowana += ".dat";
+
+skala[0]=s1;
+skala[1]=s2;
+skala[2]=s3;
+polozenie[1]=p1;
+polozenie[2]=p2;
+polozenie[3]=p3;
+
 }
 
 
 
-bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki(Wektor<double> skala, Wektor<double> polozenie)
+bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
 {
   ifstream  StrmWe(_NazwaPliku_BrylaWzorcowa);
   ofstream  StrmWy(_NazwaPliku_BrylaRysowana);

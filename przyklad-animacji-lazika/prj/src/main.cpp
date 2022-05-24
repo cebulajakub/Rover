@@ -62,9 +62,9 @@ int main()
 Wektor<double> sk;
 Wektor<double> pol;
   
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
-  Ob2.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
-  Ob3.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  Ob1.Przelicz_i_Zapisz_Wierzcholki();
+  Ob2.Przelicz_i_Zapisz_Wierzcholki();
+  Ob3.Przelicz_i_Zapisz_Wierzcholki();
   
        
 
@@ -75,13 +75,13 @@ Wektor<double> pol;
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  Ob1.Przelicz_i_Zapisz_Wierzcholki();
   Lacze.Rysuj();
 
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
-  Ob1.Przelicz_i_Zapisz_Wierzcholki(sk,pol);
+  Ob1.Przelicz_i_Zapisz_Wierzcholki();
   Lacze.Rysuj();
   
   cout << "Nacisnij klawisz ENTER, aby zakonczyc." << endl;

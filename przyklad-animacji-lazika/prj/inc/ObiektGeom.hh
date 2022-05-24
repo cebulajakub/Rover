@@ -12,10 +12,12 @@ class ObiektGeom {
     std::string   _NazwaPliku_BrylaRysowana;
     std::string   _NazwaObiektu;
     int           _KolorID;
+    Wektor<double> skala;
+    Wektor<double> polozenie;
   
   public:
 
-    ObiektGeom(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID);
+    ObiektGeom(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID,double s1,double s2,double s3, double p1, double p2, double p3);
 
     int WezKolorID() const { return _KolorID; }
   
@@ -24,7 +26,7 @@ class ObiektGeom {
     const std::string & WezNazwePliku_BrylaRysowana() const
                  { return _NazwaPliku_BrylaRysowana; }
 
-    bool Przelicz_i_Zapisz_Wierzcholki(Wektor<double> skala, Wektor<double> polozenie);
+    bool Przelicz_i_Zapisz_Wierzcholki();
 				     
 };
 
