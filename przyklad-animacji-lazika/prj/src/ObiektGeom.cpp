@@ -20,12 +20,12 @@ ObiektGeom::ObiektGeom( const char*  sNazwaPliku_BrylaWzorcowa,
   _NazwaPliku_BrylaRysowana += sNazwaObiektu;
   _NazwaPliku_BrylaRysowana += ".dat";
 
-skala[0]=s1;
-skala[1]=s2;
-skala[2]=s3;
-polozenie[1]=p1;
-polozenie[2]=p2;
-polozenie[3]=p3;
+this->skala[0]=s1;
+this->skala[1]=s2;
+this->skala[2]=s3;
+this->polozenie[0]=p1;
+this->polozenie[1]=p2;
+this->polozenie[2]=p3;
 
 }
 
