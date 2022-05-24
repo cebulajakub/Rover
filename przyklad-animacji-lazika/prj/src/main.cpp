@@ -50,9 +50,9 @@ int main()
   Inicjalizuj_Lacze(Lacze);
   if (!Inicjalizuj_PowierzchnieMarsa(Lacze)) return 1;
 
-  ObiektGeom  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski);
-  ObiektGeom  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony);
-  ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony);
+  ObiektGeom  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0);
+  ObiektGeom  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0);
+  ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0);
     
 
   DodajDoListyRysowania(Lacze,Ob1);
