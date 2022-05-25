@@ -1,6 +1,7 @@
 #ifndef OBIEKTGEOM_HH
 #define OBIEKTGEOM_HH
 #include "Wektor.hh"
+#include "Macierz.hh"
 
 #include <string>
 
@@ -8,6 +9,7 @@
 #define NAZWA_KARTOTEKI_PLIKOW_DO_RYSOWANIA    "pliki_do_rysowania"
 
 class ObiektGeom {
+  protected:
     std::string   _NazwaPliku_BrylaWzorcowa;
     std::string   _NazwaPliku_BrylaRysowana;
     std::string   _NazwaObiektu;

@@ -2,6 +2,7 @@
 #include <fstream>
 #include "ObiektGeom.hh"
 #include "Wektor.hh"
+#include "Macierz.hh"
 
 
 
