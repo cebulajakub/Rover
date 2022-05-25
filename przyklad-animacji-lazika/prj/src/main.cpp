@@ -77,12 +77,12 @@ int main()
   Ob2.Przelicz_i_Zapisz_Wierzcholki();
   Lacze.Rysuj();
 
-  /*cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
+  cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
   Ob1.Przelicz_i_Zapisz_Wierzcholki();
   Lacze.Rysuj();
   
   cout << "Nacisnij klawisz ENTER, aby zakonczyc." << endl;
-  cin.ignore(100,'\n');*/
+  cin.ignore(100,'\n');
 }
