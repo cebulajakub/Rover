@@ -54,7 +54,7 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
   if (StrmWe.fail())return false;
   
   do {
-    Wsp = Wsp*skala+polozenie;
+    Wsp = MacierzRotacji*(Wsp*skala)+polozenie;
     StrmWy << Wsp<<endl;
     ++Indeks_Wiersza;
     

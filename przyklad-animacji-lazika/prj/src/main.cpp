@@ -7,6 +7,7 @@
 #include "Wektor.hh"
 #include "lazik.cpp"
 #include "Wektor.cpp"
+#include "lazik.hh"
 
 using namespace std;
 
@@ -51,9 +52,9 @@ int main()
   Inicjalizuj_Lacze(Lacze);
   if (!Inicjalizuj_PowierzchnieMarsa(Lacze)) return 1;
 
-  ObiektGeom  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0);
-  ObiektGeom  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0);
-  ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0);
+  lazik  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0,0);
+  lazik  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0,0);
+  lazik  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0,0);
  
 
   DodajDoListyRysowania(Lacze,Ob1);
@@ -71,6 +72,8 @@ int main()
   
   cout << endl << "Start programu gnuplot" << endl << endl;
   Lacze.Rysuj();
+  Ob1.Obroc_lazik(Lacze);
+  //Ob1.Przesun_lazik(Lacze);
   
   
 

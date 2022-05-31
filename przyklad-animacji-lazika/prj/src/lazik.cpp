@@ -4,7 +4,7 @@
 #include "lacze_do_gnuplota.hh"
 #include <cmath>
 
-#define PI 3,141592653589793238462643
+#define PI 3.141592653589793238462643
 
 using namespace std;
 
@@ -26,7 +26,7 @@ ObiektGeom(sNazwaPliku_BrylaWzorcowa,sNazwaObiektu,KolorID,s1,s2,s3,p1,p2,p3), O
 
 void::lazik::Przesun_lazik(PzG::LaczeDoGNUPlota &Lacze)
 {
-cout<<"Podaj odleglosc o jaka ma sie przesunac lazik";
+cout<<"Podaj odleglosc o jaka ma sie przesunac lazik:"<<endl;
 cin>>OdlegloscDoPrzejechania;
 
 float KatwRadianach=(KatwStopniach*PI)/180;
@@ -58,10 +58,10 @@ void::lazik::Obroc_lazik(PzG::LaczeDoGNUPlota &Lacze)
 float x;
 float KatwRadianach;
 float tymczasowe=Orientacja;
-Orientacja= Orientacja + x;
 
-cout<<"Podaj kat (w stopnaich) o jaki chcesz obrocic lazik";
+cout<<"Podaj kat (w stopnaich) o jaki chcesz obrocic lazik"<<endl;
 cin>>x;
+Orientacja= Orientacja + x;
 
 while(tymczasowe<Orientacja){
     KatwRadianach=tymczasowe*(PI/180);
@@ -70,7 +70,7 @@ while(tymczasowe<Orientacja){
     MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
     Przelicz_i_Zapisz_Wierzcholki();
     Lacze.Rysuj();
-    tymczasowe=tymczasowe+0,1;
+    tymczasowe=tymczasowe+0.1;
 }
 if((tymczasowe-1)!=Orientacja)
 {
