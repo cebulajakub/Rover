@@ -73,7 +73,7 @@ int main()
   cout << endl << "Start programu gnuplot" << endl << endl;
   Lacze.Rysuj();
   Ob1.Obroc_lazik(Lacze);
-  //Ob1.Przesun_lazik(Lacze);
+  Ob1.Przesun_lazik(Lacze);
   
   
 
