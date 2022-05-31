@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include "ObiektGeom.hh"
-#include "Wektor.hh"
-#include "Macierz.hh"
+#include "Wektor.cpp"
+#include "Macierz.cpp"
+
 
 
 
@@ -45,18 +46,16 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
     return false;
   }
 
-  double  WspX, WspY, WspZ;
+  Wektor<double> Wsp;
   int Indeks_Wiersza = 0;
   
-  StrmWe >> WspX >> WspY >> WspZ;
+  StrmWe >> Wsp;
 
   if (StrmWe.fail())return false;
   
   do {
-    WspX = WspX*skala[0]+polozenie[0];
-    WspY = WspY*skala[1]+polozenie[1];    
-    WspZ = WspZ*skala[2]+polozenie[2];
-    StrmWy << WspX << " " << WspY << " " << WspZ << endl;
+    Wsp = Wsp*skala+polozenie;
+    StrmWy << Wsp<<endl;
     ++Indeks_Wiersza;
     
     if (Indeks_Wiersza >= 4) {
@@ -64,7 +63,7 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
       Indeks_Wiersza = 0;
     }
     
-    StrmWe >> WspX >> WspY >> WspZ;
+    StrmWe >> Wsp;
     
   } while (!StrmWe.fail());
 

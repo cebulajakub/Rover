@@ -5,7 +5,8 @@
 #include "ObiektGeom.hh"
 #include "Kolory.hh"
 #include "Wektor.hh"
-
+#include "lazik.cpp"
+#include "Wektor.cpp"
 
 using namespace std;
 
@@ -53,9 +54,7 @@ int main()
   ObiektGeom  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0);
   ObiektGeom  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0);
   ObiektGeom  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0);
-   Wektor<double> x; 
-   cin>>x;
-
+ 
 
   DodajDoListyRysowania(Lacze,Ob1);
   DodajDoListyRysowania(Lacze,Ob2);
@@ -72,6 +71,8 @@ int main()
   
   cout << endl << "Start programu gnuplot" << endl << endl;
   Lacze.Rysuj();
+  
+  
 
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');

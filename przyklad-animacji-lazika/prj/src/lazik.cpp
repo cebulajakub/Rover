@@ -1,27 +1,85 @@
 #include <iostream>
 #include "lazik.hh"
+#include "Wektor.hh"
+#include "lacze_do_gnuplota.hh"
 #include <cmath>
 
 #define PI 3,141592653589793238462643
 
 using namespace std;
 
-void::lazik::Przesun_lazik()
+lazik::lazik(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID,double s1,double s2,double s3, double p1, double p2, double p3, float orientacja):
+ObiektGeom(sNazwaPliku_BrylaWzorcowa,sNazwaObiektu,KolorID,s1,s2,s3,p1,p2,p3), Orientacja(orientacja)
 {
-double KatwRadianach=(KatwStopniach*PI)/180;
-
+    OdlegloscDoPrzejechania=0;
+    float KatwRadianach=Orientacja*(PI/180);
+    MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
+    MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
+    MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
 
 }
 
-void::lazik::Obroc_lazik(const Wektor<double> &polozenie)const
-{
-double KatwRadianach=(KatwStopniach*PI)/180;
-double sinus=sin(KatwRadianach);
-double cosinus=cos(KatwRadianach);
-Wektor<double> pozycja_obrocona;
 
-pozycja_obrocona[0]=(polozenie[0] * cosinus) - (polozenie[1] * sinus);
-pozycja_obrocona[1]=(polozenie[0] * cosinus) - (polozenie[1] * sinus);
-pozycja_obrocona[2]=polozenie[2];
+
+
+
+
+void::lazik::Przesun_lazik(PzG::LaczeDoGNUPlota &Lacze)
+{
+cout<<"Podaj odleglosc o jaka ma sie przesunac lazik";
+cin>>OdlegloscDoPrzejechania;
+
+float KatwRadianach=(KatwStopniach*PI)/180;
+Wektor<double> wek;
+while(OdlegloscDoPrzejechania>=0.01){
+    wek[0]=cos(KatwRadianach)*0.01;
+    wek[1]=sin(KatwRadianach)*0.01;
+    wek[2]=0;
+    OdlegloscDoPrzejechania=OdlegloscDoPrzejechania-0.01;
+    polozenie=polozenie+wek;
+    Przelicz_i_Zapisz_Wierzcholki();
+    Lacze.Rysuj();
+}
+if (OdlegloscDoPrzejechania!=0)
+{
+    wek[0]=cos(KatwRadianach)*OdlegloscDoPrzejechania;
+    wek[1]=sin(KatwRadianach)*OdlegloscDoPrzejechania;
+    wek[2]=0;
+    polozenie=polozenie+wek;
+    Przelicz_i_Zapisz_Wierzcholki();
+    Lacze.Rysuj(); 
+    OdlegloscDoPrzejechania=0;  
+}
+
+}
+
+void::lazik::Obroc_lazik(PzG::LaczeDoGNUPlota &Lacze)
+{
+float x;
+float KatwRadianach;
+float tymczasowe=Orientacja;
+Orientacja= Orientacja + x;
+
+cout<<"Podaj kat (w stopnaich) o jaki chcesz obrocic lazik";
+cin>>x;
+
+while(tymczasowe<Orientacja){
+    KatwRadianach=tymczasowe*(PI/180);
+    MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
+    MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
+    MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
+    Przelicz_i_Zapisz_Wierzcholki();
+    Lacze.Rysuj();
+    tymczasowe=tymczasowe+0,1;
+}
+if((tymczasowe-1)!=Orientacja)
+{
+    KatwRadianach=(tymczasowe+(Orientacja-(tymczasowe-1)))*(PI/180);
+    MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
+    MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
+    MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
+    Przelicz_i_Zapisz_Wierzcholki();
+    Lacze.Rysuj();
+}
 
 }

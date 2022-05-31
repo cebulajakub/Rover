@@ -24,6 +24,7 @@ class Wektor {
   Wektor<TYP> operator - (const Wektor<TYP> &L1);
   Wektor<TYP> operator * (const TYP &L1);
   Wektor<TYP> operator / (const TYP &L1);
+  Wektor<TYP> operator *(const Wektor<TYP> &L1);
   const TYP & operator [] (int ind) const {return this-> wspolczynniki[ind];}
   TYP & operator[] (int ind) {return this->wspolczynniki[ind];}
 

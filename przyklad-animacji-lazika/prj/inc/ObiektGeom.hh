@@ -2,6 +2,7 @@
 #define OBIEKTGEOM_HH
 #include "Wektor.hh"
 #include "Macierz.hh"
+#include "lacze_do_gnuplota.hh"
 
 #include <string>
 
@@ -16,6 +17,7 @@ class ObiektGeom {
     int           _KolorID;
     Wektor<double> skala;
     Wektor<double> polozenie;
+    Macierz<double> MacierzRotacji;
   
   public:
 

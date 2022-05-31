@@ -20,6 +20,7 @@ class Macierz {
   void zamienwiersz(int w1, int w2);
   const TYP & operator () (int x, int y) const {return this-> wektor[x][y];}
   TYP & operator() (int x, int y) {return this->wektor[x][y];}
+  Wektor<TYP> operator *(const Wektor<TYP> Wek)const;
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */    

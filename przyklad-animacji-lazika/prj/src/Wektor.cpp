@@ -46,3 +46,14 @@ wyn[i]=(*this)[i]/L1;
 }
 return wyn;
 }
+
+template<typename TYP>
+Wektor<TYP> Wektor<TYP>::operator *(const Wektor<TYP> &L1){
+Wektor<TYP> wektor;
+
+wektor[0]=(*this)[0]*L1[0];
+wektor[1]=(*this)[1]*L1[1];
+wektor[2]=(*this)[2]*L1[2];
+
+return wektor;
+}
