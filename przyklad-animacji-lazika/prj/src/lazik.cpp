@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "lazik.hh"
 #include "Wektor.hh"
 #include "lacze_do_gnuplota.hh"
@@ -29,13 +30,15 @@ void::lazik::Przesun_lazik(PzG::LaczeDoGNUPlota &Lacze)
 cout<<"Podaj odleglosc o jaka ma sie przesunac lazik:"<<endl;
 cin>>OdlegloscDoPrzejechania;
 
+OdlegloscDoPrzejechania=abs(OdlegloscDoPrzejechania);
+
 float KatwRadianach=(KatwStopniach*PI)/180;
 Wektor<double> wek;
-while(OdlegloscDoPrzejechania>=0.01){
-    wek[0]=cos(KatwRadianach)*0.01;
-    wek[1]=sin(KatwRadianach)*0.01;
+while(OdlegloscDoPrzejechania>=0.1){
+    wek[0]=cos(KatwRadianach)*0.1;
+    wek[1]=sin(KatwRadianach)*0.1;
     wek[2]=0;
-    OdlegloscDoPrzejechania=OdlegloscDoPrzejechania-0.01;
+    OdlegloscDoPrzejechania=OdlegloscDoPrzejechania-0.1;
     polozenie=polozenie+wek;
     Przelicz_i_Zapisz_Wierzcholki();
     Lacze.Rysuj();
