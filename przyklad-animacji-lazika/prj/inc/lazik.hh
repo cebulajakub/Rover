@@ -5,8 +5,7 @@
 
 class lazik: public ObiektGeom{
     double OdlegloscDoPrzejechania;
-    float Orientacja;
-    double KatwStopniach;
+    float KatwStopniach;
 public:
 lazik(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID,double s1,double s2,double s3, double p1, double p2, double p3,float orientacja);
 void Przesun_lazik(PzG::LaczeDoGNUPlota &Lacze);

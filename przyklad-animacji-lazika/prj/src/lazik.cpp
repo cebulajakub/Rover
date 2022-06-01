@@ -9,10 +9,10 @@
 using namespace std;
 
 lazik::lazik(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID,double s1,double s2,double s3, double p1, double p2, double p3, float orientacja):
-ObiektGeom(sNazwaPliku_BrylaWzorcowa,sNazwaObiektu,KolorID,s1,s2,s3,p1,p2,p3), Orientacja(orientacja)
+ObiektGeom(sNazwaPliku_BrylaWzorcowa,sNazwaObiektu,KolorID,s1,s2,s3,p1,p2,p3), KatwStopniach(orientacja)
 {
     OdlegloscDoPrzejechania=0;
-    float KatwRadianach=Orientacja*(PI/180);
+    float KatwRadianach=KatwStopniach*(PI/180);
     MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
     MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
     MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
@@ -57,13 +57,13 @@ void::lazik::Obroc_lazik(PzG::LaczeDoGNUPlota &Lacze)
 {
 float x;
 float KatwRadianach;
-float tymczasowe=Orientacja;
+float tymczasowe=KatwStopniach;
 
 cout<<"Podaj kat (w stopnaich) o jaki chcesz obrocic lazik"<<endl;
 cin>>x;
-Orientacja= Orientacja + x;
+KatwStopniach= KatwStopniach + x;
 
-while(tymczasowe<Orientacja){
+while(tymczasowe<KatwStopniach){
     KatwRadianach=tymczasowe*(PI/180);
     MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
     MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
@@ -72,9 +72,9 @@ while(tymczasowe<Orientacja){
     Lacze.Rysuj();
     tymczasowe=tymczasowe+0.1;
 }
-if((tymczasowe-1)!=Orientacja)
+if((tymczasowe-1)!=KatwStopniach)
 {
-    KatwRadianach=(tymczasowe+(Orientacja-(tymczasowe-1)))*(PI/180);
+    KatwRadianach=(tymczasowe+(KatwStopniach-(tymczasowe-1)))*(PI/180);
     MacierzRotacji(0,0)=cos(KatwRadianach); MacierzRotacji(0,1)=((-1)*sin(KatwRadianach)); MacierzRotacji(0,2)=0;
     MacierzRotacji(1,0)=sin(KatwRadianach); MacierzRotacji(1,1)=cos(KatwRadianach); MacierzRotacji(1,2)=0;
     MacierzRotacji(2,0)=0; MacierzRotacji(2,1)=0; MacierzRotacji(2,2)=1;
