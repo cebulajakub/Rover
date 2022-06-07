@@ -8,6 +8,9 @@
 #include "lazik.cpp"
 #include "Wektor.cpp"
 #include "lazik.hh"
+#include "Scena.hh"
+#include "Scena.cpp"
+
 
 using namespace std;
 
@@ -52,31 +55,35 @@ int main()
   Inicjalizuj_Lacze(Lacze);
   if (!Inicjalizuj_PowierzchnieMarsa(Lacze)) return 1;
 
+  Scena scena(Lacze);
+
   lazik  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0,0);
   lazik  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0,0);
   lazik  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0,0);
- 
 
+  scena.dodaj_do_listy(std::make_shared<lazik>(Ob1));
+  scena.dodaj_do_listy(std::make_shared<lazik>(Ob2));
+  scena.dodaj_do_listy(std::make_shared<lazik>(Ob3));
+ 
+/*
   DodajDoListyRysowania(Lacze,Ob1);
   DodajDoListyRysowania(Lacze,Ob2);
   DodajDoListyRysowania(Lacze,Ob3);
-  
-
-  
+*/
+/* 
   Ob1.Przelicz_i_Zapisz_Wierzcholki();
   Ob2.Przelicz_i_Zapisz_Wierzcholki();
   Ob3.Przelicz_i_Zapisz_Wierzcholki();
-  
+*/  
        
 
   
   cout << endl << "Start programu gnuplot" << endl << endl;
   Lacze.Rysuj();
-  Ob1.Obroc_lazik(Lacze);
-  Ob1.Przesun_lazik(Lacze);
-  
-  
+  scena.menu();
 
+  
+  /*
   cout << "Nacisnij klawisz ENTER, aby FSR wykonal przesuniecie." << endl;
   cin.ignore(100,'\n');
 
@@ -91,4 +98,5 @@ int main()
   
   cout << "Nacisnij klawisz ENTER, aby zakonczyc." << endl;
   cin.ignore(100,'\n');
+  */
 }

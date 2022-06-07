@@ -20,6 +20,7 @@ class ObiektGeom {
     Macierz<double> MacierzRotacji;
   
   public:
+  Wektor<double> akt;
 
     ObiektGeom(const char* sNazwaPliku_BrylaWzorcowa, const char* sNazwaObiektu, int KolorID,double s1,double s2,double s3, double p1, double p2, double p3);
 
@@ -31,6 +32,8 @@ class ObiektGeom {
                  { return _NazwaPliku_BrylaRysowana; }
 
     bool Przelicz_i_Zapisz_Wierzcholki();
+    bool mozliwy_lazik();
+    virtual ~ObiektGeom(){};
 				     
 };
 

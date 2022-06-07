@@ -86,3 +86,7 @@ if((tymczasowe-1)!=KatwStopniach)
 }
 
 }
+
+bool lazik::mozliwy_lazik(){
+    return true;
+}
