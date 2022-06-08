@@ -60,10 +60,11 @@ int main()
   lazik  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0,0);
   lazik  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0,0);
   lazik  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0,0);
-
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob1));
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob2));
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob3));
+
+  scena.wybeierz_lazik();
  
 /*
   DodajDoListyRysowania(Lacze,Ob1);

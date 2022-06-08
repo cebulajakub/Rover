@@ -23,7 +23,7 @@ void Scena::dodaj_do_listy(std::shared_ptr<ObiektGeom> OB){
 }
 
 void Scena::wybeierz_lazik(){
-    int numer_lazika=0;
+    int numer_lazika;
     
     std::vector<std::shared_ptr<ObiektGeom>> laziki;
 

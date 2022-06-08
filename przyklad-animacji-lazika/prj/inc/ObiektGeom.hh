@@ -32,7 +32,7 @@ class ObiektGeom {
                  { return _NazwaPliku_BrylaRysowana; }
 
     bool Przelicz_i_Zapisz_Wierzcholki();
-    bool mozliwy_lazik();
+    virtual bool mozliwy_lazik();
     virtual ~ObiektGeom(){};
 				     
 };

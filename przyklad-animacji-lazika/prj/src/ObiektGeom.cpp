@@ -72,5 +72,5 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
   return Indeks_Wiersza == 0 && !StrmWy.fail();
 }
 bool ObiektGeom::mozliwy_lazik(){
-    return true;
+    return false;
 }
