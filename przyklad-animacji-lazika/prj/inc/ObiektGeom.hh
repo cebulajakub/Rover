@@ -35,6 +35,8 @@ class ObiektGeom {
     virtual bool mozliwy_lazik();
     virtual ~ObiektGeom(){};
     Wektor<double> Polozenie();
+    Wektor<double> Skala();
+
 				     
 };
 

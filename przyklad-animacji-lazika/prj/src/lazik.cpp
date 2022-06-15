@@ -25,8 +25,8 @@ ObiektGeom(sNazwaPliku_BrylaWzorcowa,sNazwaObiektu,KolorID,s1,s2,s3,p1,p2,p3), K
 bool lazik::Kolizja(std::list<std::shared_ptr<ObiektGeom>> Wszystkie_Obiekty)
 {
 double odleglosc;
-double maksymalna_odleglosc=25;
-Wektor<double> Wek;
+double maksymalna_odleglosc=0;
+Wektor<double> Wek, Skala;
 Wektor<double> Pol=(*this).Polozenie();
 std::vector<std::shared_ptr<ObiektGeom>> laziki;
 
@@ -38,6 +38,8 @@ for(std::shared_ptr<ObiektGeom> obiekt: Wszystkie_Obiekty)
 
 for(long unsigned int i=0;i<laziki.size();i++)
 {
+    Skala=(*this).Skala();
+    maksymalna_odleglosc=(sqrt(2)*10)+sqrt(2)*Skala[0]/2;
     Wek=laziki[i]->Polozenie();
     odleglosc=sqrt(((Wek[0]-Pol[0])*(Wek[0]-Pol[0]))+((Wek[1]-Pol[1])*(Wek[1]-Pol[1])));
 

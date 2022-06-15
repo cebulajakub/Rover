@@ -77,3 +77,7 @@ bool ObiektGeom::mozliwy_lazik(){
 Wektor<double> ObiektGeom::Polozenie(){
   return (*this).polozenie;
 }
+
+Wektor<double> ObiektGeom::Skala(){
+  return (*this).skala;
+}

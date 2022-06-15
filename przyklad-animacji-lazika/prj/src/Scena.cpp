@@ -42,7 +42,7 @@ for (long unsigned int i = 0; i < laziki.size(); ++i)
     std::cout<< laziki[i]->WezNazweObiektu();
 }
 
-std::cout<<"Twoj wybor:";
+std::cout<<std::endl<<"Twoj wybor:";
 std::cin>>numer_lazika;
 
 Aktywny_Lazik=std::dynamic_pointer_cast<lazik>(laziki[numer_lazika-1]);
