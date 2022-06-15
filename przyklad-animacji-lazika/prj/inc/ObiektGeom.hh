@@ -31,9 +31,10 @@ class ObiektGeom {
     const std::string & WezNazwePliku_BrylaRysowana() const
                  { return _NazwaPliku_BrylaRysowana; }
 
-    bool Przelicz_i_Zapisz_Wierzcholki();
+    virtual bool Przelicz_i_Zapisz_Wierzcholki();
     virtual bool mozliwy_lazik();
     virtual ~ObiektGeom(){};
+    Wektor<double> Polozenie();
 				     
 };
 

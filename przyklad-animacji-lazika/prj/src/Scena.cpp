@@ -52,7 +52,7 @@ Aktywny_Lazik=std::dynamic_pointer_cast<lazik>(laziki[numer_lazika-1]);
 void Scena::ruch_lazika(){
 
 
-    Aktywny_Lazik->Przesun_lazik(Lacze);
+    Aktywny_Lazik->Przesun_lazik(Lacze, Wszystkie_Obiekty);
 }
 
 

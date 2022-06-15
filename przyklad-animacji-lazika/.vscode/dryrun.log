@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/jakub/2/lazik/przyklad-animacji-lazika'
-make: Leaving directory '/home/jakub/2/lazik/przyklad-animacji-lazika'
+make: Entering directory '/home/jakub/2/lazik2/lazik/przyklad-animacji-lazika'
+make: Leaving directory '/home/jakub/2/lazik2/lazik/przyklad-animacji-lazika'
  
 make: *** No targets specified and no makefile found.  Stop.
 

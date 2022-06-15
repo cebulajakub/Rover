@@ -54,7 +54,7 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
   if (StrmWe.fail())return false;
   
   do {
-    Wsp = MacierzRotacji*(Wsp*skala)+polozenie;
+    Wsp = (Wsp*skala)+polozenie;
     StrmWy << Wsp<<endl;
     ++Indeks_Wiersza;
     
@@ -73,4 +73,7 @@ bool ObiektGeom::Przelicz_i_Zapisz_Wierzcholki()
 }
 bool ObiektGeom::mozliwy_lazik(){
     return false;
+}
+Wektor<double> ObiektGeom::Polozenie(){
+  return (*this).polozenie;
 }

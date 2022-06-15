@@ -60,22 +60,30 @@ int main()
   lazik  Ob1("bryly_wzorcowe/szescian3.dat","FSR",Kolor_JasnoNiebieski, 20,20,10,0,0,0,0);
   lazik  Ob2("bryly_wzorcowe/szescian3.dat","Perseverance",Kolor_Czerwony, 20,20,10,60,60,0,0);
   lazik  Ob3("bryly_wzorcowe/szescian3.dat","Curiosity",Kolor_Czerwony, 20,20,10,-20,70,0,0);
+  ObiektGeom Ob4("bryly_wzorcowe/szescian3.dat","probka",2, 7,7,7,-20,-20,0);
+  ObiektGeom Ob5("bryly_wzorcowe/szescian3.dat","probka2",8, 7,7,7,50,-20,0);
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob1));
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob2));
   scena.dodaj_do_listy(std::make_shared<lazik>(Ob3));
+  scena.dodaj_do_listy(std::make_shared<ObiektGeom>(Ob4));
+  scena.dodaj_do_listy(std::make_shared<ObiektGeom>(Ob5));
 
   scena.wybeierz_lazik();
  
-/*
+
   DodajDoListyRysowania(Lacze,Ob1);
   DodajDoListyRysowania(Lacze,Ob2);
   DodajDoListyRysowania(Lacze,Ob3);
-*/
-/* 
+  DodajDoListyRysowania(Lacze,Ob4);
+  DodajDoListyRysowania(Lacze,Ob5);
+
   Ob1.Przelicz_i_Zapisz_Wierzcholki();
   Ob2.Przelicz_i_Zapisz_Wierzcholki();
   Ob3.Przelicz_i_Zapisz_Wierzcholki();
-*/  
+  Ob4.Przelicz_i_Zapisz_Wierzcholki();
+  Ob5.Przelicz_i_Zapisz_Wierzcholki();
+  //Ob4.Przelicz_i_Zapisz_Wierzcholki();
+  
        
 
   
